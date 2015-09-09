@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,35 +17,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fum-WP-K5p">
-                                <rect key="frame" x="37" y="44" width="105" height="30"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ui7-0q-NMi">
+                                <rect key="frame" x="0.0" y="53" width="320" height="515"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="515" id="nCz-lg-wOa"/>
+                                </constraints>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fum-WP-K5p">
+                                <rect key="frame" x="25" y="20" width="266" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="d7t-wE-D4l"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUc-Hz-Z5M">
-                                <rect key="frame" x="266" y="43" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="cameraBtnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MFO-ou-Cdm"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H51-ie-EgU">
-                                <rect key="frame" x="115" y="104" width="90" height="90"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fum-WP-K5p" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="5Y8-aQ-aam"/>
+                            <constraint firstItem="ui7-0q-NMi" firstAttribute="top" secondItem="fum-WP-K5p" secondAttribute="bottom" constant="3" id="9Jn-8H-P7K"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ui7-0q-NMi" secondAttribute="trailing" constant="-16" id="VIi-m7-UVi"/>
+                            <constraint firstItem="ui7-0q-NMi" firstAttribute="top" secondItem="fum-WP-K5p" secondAttribute="bottom" constant="3" id="pIx-iU-O36"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fum-WP-K5p" secondAttribute="trailing" constant="13" id="pqc-Mf-Vd7"/>
+                            <constraint firstItem="ui7-0q-NMi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="rPZ-Wh-SxK"/>
+                            <constraint firstItem="fum-WP-K5p" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="9" id="tWL-9q-5cc"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ui7-0q-NMi" secondAttribute="bottom" id="wil-wx-R3e"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="profileImageView" destination="H51-ie-EgU" id="K1C-E9-5Vx"/>
                         <outlet property="searchTxtField" destination="fum-WP-K5p" id="aON-Qe-Ekj"/>
+                        <outlet property="tableView" destination="ui7-0q-NMi" id="s0Q-eg-3M4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-118" y="226"/>
+            <point key="canvasLocation" x="-152" y="68"/>
         </scene>
     </scenes>
 </document>
